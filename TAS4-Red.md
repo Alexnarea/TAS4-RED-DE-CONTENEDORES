@@ -6,7 +6,7 @@ Despliegue y Configuración de Servidores de Base de Datos MySQL y phpMyAdmin en
 El tiempo fue de 120 minutos. 
 ## 3. Fundamentos:
 
-## Contenedor Docker 
+## Redes Docker 
 
 Un contenedor de Docker es un entorno de ejecución que tiene todos los componentes necesarios (como el código, las dependencias y las bibliotecas) para ejecutar el código de la aplicación sin utilizar las dependencias de la máquina host. Este tiempo de ejecución del contenedor se ejecuta en el motor de un servidor, una máquina o una instancia en la nube. El motor ejecuta varios contenedores en función de los recursos subyacentes disponibles(Imagen de Docker y Contenedor: Diferencia Entre Tecnologías de Implementación de Aplicaciones - AWS, n.d.). 
 
@@ -91,15 +91,9 @@ Figura 8-5 Configuracion y creacion de la base de datos en la interfaz de phpMyA
 
 ## 9. Resultados esperados:
     
-Al finalizar la práctica, se logró cumplir exitosamente cada uno de los objetivos planteados en el procedimiento. En primer lugar, se realizó el despliegue correcto de los contenedores Docker ejecutando el servidor web Nginx, utilizando la imagen oficial disponible en Docker Hub. Cada contenedor fue vinculado a un puerto diferente (8089 y 8090), permitiendo el acceso independiente desde el navegador.
+Al finalizar la práctica, se logró cumplir exitosamente los objetivos planteados. Se desplegó correctamente un contenedor de base de datos MySQL, configurando las credenciales de acceso (root/admin) y exponiendo el puerto 3307. Mediante la creación de una red personalizada, se facilitó la comunicación entre los contenedores de MySQL y phpMyAdmin, evitando conflictos de puertos y garantizando la resolución de nombres de servicio.
 
-Cada servidor web mostró una página HTML distinta, cumpliendo con la guía. El primer contenedor desplegó una página con información institucional, mientras que el segundo mostró una página personalizada con datos del estudiante. Para lograr esto, se utilizaron comandos como docker ``cp`` para transferir los archivos HTML al interior de los contenedores.
-
-Durante el proceso se emplearon de manera adecuada los comandos ``docker run``, ``docker cp``, ``docker stop``, ``docker start``. Además, se aplicó correctamente el mapeo de puertos con la opción ``-p``, y se trabajó en modo desatendido con ``-d`` para mantener los servicios corriendo en segundo plano.
-
-Todo el desarrollo de la práctica fue documentado con capturas de pantalla que evidencian el funcionamiento de los servidores web, el uso correcto de los comandos Docker y la visualización del contenido personalizado desde el navegador. Esto demuestra una comprensión sólida de los conceptos de virtualización, contenedores y servicios web, alcanzando satisfactoriamente los objetivos de aprendizaje propuestos.
-
-<img src="./docker-img/alex.PNG" alt="drawing0" width="500"/>
+Desde phpMyAdmin, accedido a través del navegador en el puerto 8081, se pudo gestionar el servidor MySQL y crear de forma gráfica una base de datos de prueba, verificando así la conectividad y funcionamiento del sistema. Durante el proceso se aplicaron comandos esenciales de Docker como ``docker network create``, ``docker network connect``, y se comprendió la importancia de las variables de entorno para la configuración de servicios. Todo el desarrollo de la práctica fue documentado con capturas de pantalla que evidencian la creación de la red, el despliegue de los contenedores, la configuración de acceso y la creación exitosa de una base de datos de prueba desde phpMyAdmin.
 
 <img src="./docker-img/inst.PNG" alt="drawing0" width="500"/>
 
