@@ -56,65 +56,37 @@ Para realizar esta practica el estudiante necesita tener claro los siguientes te
 
 ### Pasos 
 
-**Crear una estructura de carpetas:**
+1. Crear un contenedor para MySQL, definiendo las credenciales necesarias.
 
-1. Crea el primer contenedor Nginx llamado nginx1 exponiendo el puerto 8089: docker run -d --name nginx1 -p 8089:80 nginx.
-
-Figura 8-1 Creación de contenedor nginx1.
-
+Figura 8-1 Creación de contenedor MySQL.
 
 <img src="./docker-img/1.PNG" alt="drawing0" width="500"/>
 
+2. Crear un contenedor para phpMyAdmin, configurando las credenciales.
 
-2. Copia el archivo index.html desde el contenedor nginx1 al sistema anfitrión: docker cp nginx1:/usr/share/nginx/html/index.html ./index1.html.
-
-Figura 8-2 Copia del archivo index.html.
-
+Figura 8-2 Creación de contenedor phpMyAdmin.
 
 <img src="./docker-img/3.PNG" alt="drawing0" width="500"/>
 
-3. Edita el archivo index1.html con un editor como nano o vi, incluyendo información del instituto.
+3. Crear una red personalizada en Docker que permita la comunicación entre ambos contenedores.
 
-Figura 8-3 Edicion del archivo con informacion del instituto.
-
+Figura 8-3 Creacion de la red personalizada.
 
 <img src="./docker-img/instituto.PNG" alt="drawing0" width="500"/>
 
 
-4. Copia el archivo editado nuevamente al contenedor nginx1: docker cp index1.html nginx1:/usr/share/nginx/html/index.html.
+4. Conectar ambos contenedores a la red creada.
 
-Figura 8-4 Copia del archivo editado al contenedor. 
-
+Figura 8-4 Conexion de los contenedores a la red.
 
 <img src="./docker-img/4.PNG" alt="drawing0" width="500"/>
 
-5. Crea el segundo contenedor Nginx llamado nginx2 exponiendo el puerto 8090: docker run -d --name nginx2 -p 8090:80 nginx.
+5. Configurar la conexión entre phpMyAdmin y MySQL, y crear una base de datos de prueba desde la interfaz de phpMyAdmin.
 
-Figura 8-5 Creacion del segundo contenedor nginx2.
+Figura 8-5 Configuracion y creacion de la base de datos en la interfaz de phpMyAdmin.
 
 
 <img src="./docker-img/p1.PNG" alt="drawing0" width="500"/>
-
-6. Copia el archivo index.html desde el contenedor nginx2 al sistema anfitrión: docker cp nginx2:/usr/share/nginx/html/index.html ./index2.html.
-
-Figura 8-6 Copia del segundo archivo index.
-
-
-<img src="./docker-img/p2.PNG" alt="drawing0" width="500"/>
-
-7. Edita el archivo index1.html con un editor como nano o vi, incluyendo información del instituto.
-
-Figura 8-7 Edicion del archivo con informacion del estudiante.
-
-
-<img src="./docker-img/personal.PNG" alt="drawing0" width="500"/>
-
-8. Copia el archivo editado nuevamente al contenedor nginx1: docker cp index1.html nginx1:/usr/share/nginx/html/index.html.
-
-Figura 8-8 Copia del segundo archivo editado al contenedor.
-
-
-<img src="./docker-img/p3.PNG" alt="drawing0" width="500"/>
 
 
 ## 9. Resultados esperados:
